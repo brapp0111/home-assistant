@@ -16,7 +16,18 @@
                 "description": "Lies op https://www.home-assistant.io/docs/z-wave/installation/ fir weider Informatiounen iwwert d'Konfiguratioun vun den Variabelen",
                 "title": "Z-Wave konfigur\u00e9ieren"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Net Ereechbar",
+            "initializing": "Initialis\u00e9iert",
+            "ready": "Bereet",
+            "sleeping": "Schl\u00e9ift"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Net Ereechbar ({query_stage})",
+            "initializing": "Initialis\u00e9iert ( {query_stage} )"
+        }
     }
 }

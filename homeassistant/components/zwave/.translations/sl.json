@@ -16,7 +16,18 @@
                 "description": "Za informacije o konfiguracijskih spremenljivka si oglejte https://www.home-assistant.io/docs/z-wave/installation/",
                 "title": "Nastavite Z-Wave"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Mrtev",
+            "initializing": "Inicializacija",
+            "ready": "Pripravljen",
+            "sleeping": "Spanje"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Mrtev ({query_stage})",
+            "initializing": "Inicializacija ({query_stage})"
+        }
     }
 }

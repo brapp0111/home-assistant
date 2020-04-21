@@ -16,7 +16,18 @@
                 "description": "Viz https://www.home-assistant.io/docs/z-wave/installation/ pro informace o konfigura\u010dn\u00edch prom\u011bnn\u00fdch",
                 "title": "Nastavit Z-Wave"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Nereaguje",
+            "initializing": "Inicializace",
+            "ready": "P\u0159ipraveno",
+            "sleeping": "\u00dasporn\u00fd re\u017eim"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Nereaguje ({query_stage})",
+            "initializing": "Inicializace ( {query_stage} )"
+        }
     }
 }

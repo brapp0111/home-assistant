@@ -16,7 +16,18 @@
                 "description": "A konfigur\u00e1ci\u00f3s v\u00e1ltoz\u00f3kr\u00f3l az inform\u00e1ci\u00f3kat l\u00e1sd a https://www.home-assistant.io/docs/z-wave/installation/ oldalon.",
                 "title": "Z-Wave be\u00e1ll\u00edt\u00e1sa"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Halott",
+            "initializing": "Inicializ\u00e1l\u00e1s",
+            "ready": "K\u00e9sz",
+            "sleeping": "Alv\u00e1s"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Halott ({query_stage})",
+            "initializing": "Inicializ\u00e1l\u00e1s ({query_stage})"
+        }
     }
 }

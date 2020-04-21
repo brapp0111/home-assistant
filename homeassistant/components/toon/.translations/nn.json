@@ -1,5 +1,11 @@
 {
     "config": {
-        "title": "Toon"
+        "step": {
+            "authenticate": {
+                "data": {
+                    "username": "Brukarnamn"
+                }
+            }
+        }
     }
 }

@@ -16,7 +16,18 @@
                 "description": "Se https://www.home-assistant.io/docs/z-wave/installation/ f\u00f6r information om konfigurationsvariabler",
                 "title": "St\u00e4lla in Z-Wave"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "D\u00f6d",
+            "initializing": "Initierar",
+            "ready": "Redo",
+            "sleeping": "Sovande"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "D\u00f6d ({query_stage})",
+            "initializing": "Initierar ({query_stage})"
+        }
     }
 }

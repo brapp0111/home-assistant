@@ -9,8 +9,9 @@ from .const import CONF_CONNECTIONS, CONF_OUTPUT, DATA_LCN, OUTPUT_PORTS
 from .helpers import get_connection
 
 
-async def async_setup_platform(hass, hass_config, async_add_entities,
-                               discovery_info=None):
+async def async_setup_platform(
+    hass, hass_config, async_add_entities, discovery_info=None
+):
     """Set up the LCN switch platform."""
     if discovery_info is None:
         return
@@ -47,8 +48,7 @@ class LcnOutputSwitch(LcnDevice, SwitchDevice):
     async def async_added_to_hass(self):
         """Run when entity about to be added to hass."""
         await super().async_added_to_hass()
-        await self.address_connection.activate_status_request_handler(
-            self.output)
+        await self.address_connection.activate_status_request_handler(self.output)
 
     @property
     def is_on(self):
@@ -59,22 +59,24 @@ class LcnOutputSwitch(LcnDevice, SwitchDevice):
         """Turn the entity on."""
         self._is_on = True
         self.address_connection.dim_output(self.output.value, 100, 0)
-        await self.async_update_ha_state()
+        self.async_write_ha_state()
 
     async def async_turn_off(self, **kwargs):
         """Turn the entity off."""
         self._is_on = False
         self.address_connection.dim_output(self.output.value, 0, 0)
-        await self.async_update_ha_state()
+        self.async_write_ha_state()
 
     def input_received(self, input_obj):
         """Set switch state when LCN input object (command) is received."""
-        if not isinstance(input_obj, pypck.inputs.ModStatusOutput) or \
-                input_obj.get_output_id() != self.output.value:
+        if (
+            not isinstance(input_obj, pypck.inputs.ModStatusOutput)
+            or input_obj.get_output_id() != self.output.value
+        ):
             return
 
         self._is_on = input_obj.get_percent() > 0
-        self.async_schedule_update_ha_state()
+        self.async_write_ha_state()
 
 
 class LcnRelaySwitch(LcnDevice, SwitchDevice):
@@ -91,8 +93,7 @@ class LcnRelaySwitch(LcnDevice, SwitchDevice):
     async def async_added_to_hass(self):
         """Run when entity about to be added to hass."""
         await super().async_added_to_hass()
-        await self.address_connection.activate_status_request_handler(
-            self.output)
+        await self.address_connection.activate_status_request_handler(self.output)
 
     @property
     def is_on(self):
@@ -106,7 +107,7 @@ class LcnRelaySwitch(LcnDevice, SwitchDevice):
         states = [pypck.lcn_defs.RelayStateModifier.NOCHANGE] * 8
         states[self.output.value] = pypck.lcn_defs.RelayStateModifier.ON
         self.address_connection.control_relays(states)
-        await self.async_update_ha_state()
+        self.async_write_ha_state()
 
     async def async_turn_off(self, **kwargs):
         """Turn the entity off."""
@@ -115,7 +116,7 @@ class LcnRelaySwitch(LcnDevice, SwitchDevice):
         states = [pypck.lcn_defs.RelayStateModifier.NOCHANGE] * 8
         states[self.output.value] = pypck.lcn_defs.RelayStateModifier.OFF
         self.address_connection.control_relays(states)
-        await self.async_update_ha_state()
+        self.async_write_ha_state()
 
     def input_received(self, input_obj):
         """Set switch state when LCN input object (command) is received."""
@@ -123,4 +124,4 @@ class LcnRelaySwitch(LcnDevice, SwitchDevice):
             return
 
         self._is_on = input_obj.get_state(self.output.value)
-        self.async_schedule_update_ha_state()
+        self.async_write_ha_state()

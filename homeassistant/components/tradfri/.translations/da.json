@@ -1,7 +1,8 @@
 {
     "config": {
         "abort": {
-            "already_configured": "Bridge er allerede konfigureret"
+            "already_configured": "Bro er allerede konfigureret.",
+            "already_in_progress": "Bro konfiguration er allerede i gang."
         },
         "error": {
             "cannot_connect": "Kan ikke oprette forbindelse til gateway.",
@@ -17,7 +18,6 @@
                 "description": "Du kan finde sikkerhedskoden p\u00e5 bagsiden af din gateway.",
                 "title": "Indtast sikkerhedskode"
             }
-        },
-        "title": "IKEA TR\u00c5DFRI"
+        }
     }
 }

@@ -1,6 +1,8 @@
 {
     "config": {
         "abort": {
+            "already_setup": "Solo puede configurar una cuenta Point.",
+            "authorize_url_fail": "Error desconocido al generar una URL de autorizaci\u00f3n.",
             "external_setup": "Punto configurado con \u00e9xito desde otro flujo."
         },
         "error": {
@@ -18,7 +20,6 @@
                 "description": "Elija a trav\u00e9s de qu\u00e9 proveedor de autenticaci\u00f3n desea autenticarse con Point.",
                 "title": "Proveedor de autenticaci\u00f3n"
             }
-        },
-        "title": "Minut Point"
+        }
     }
 }

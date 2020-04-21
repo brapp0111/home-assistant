@@ -1,6 +1,8 @@
 """Support for the for Danfoss Air HRV sswitches."""
 import logging
 
+from pydanfossair.commands import ReadCommand, UpdateCommand
+
 from homeassistant.components.switch import SwitchDevice
 
 from . import DOMAIN as DANFOSS_AIR_DOMAIN
@@ -10,30 +12,33 @@ _LOGGER = logging.getLogger(__name__)
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
     """Set up the Danfoss Air HRV switch platform."""
-    from pydanfossair.commands import ReadCommand, UpdateCommand
-
     data = hass.data[DANFOSS_AIR_DOMAIN]
 
     switches = [
-        ["Danfoss Air Boost",
-         ReadCommand.boost,
-         UpdateCommand.boost_activate,
-         UpdateCommand.boost_deactivate],
-        ["Danfoss Air Bypass",
-         ReadCommand.bypass,
-         UpdateCommand.bypass_activate,
-         UpdateCommand.bypass_deactivate],
-        ["Danfoss Air Automatic Bypass",
-         ReadCommand.automatic_bypass,
-         UpdateCommand.bypass_activate,
-         UpdateCommand.bypass_deactivate],
+        [
+            "Danfoss Air Boost",
+            ReadCommand.boost,
+            UpdateCommand.boost_activate,
+            UpdateCommand.boost_deactivate,
+        ],
+        [
+            "Danfoss Air Bypass",
+            ReadCommand.bypass,
+            UpdateCommand.bypass_activate,
+            UpdateCommand.bypass_deactivate,
+        ],
+        [
+            "Danfoss Air Automatic Bypass",
+            ReadCommand.automatic_bypass,
+            UpdateCommand.bypass_activate,
+            UpdateCommand.bypass_deactivate,
+        ],
     ]
 
     dev = []
 
     for switch in switches:
-        dev.append(DanfossAir(
-            data, switch[0], switch[1], switch[2], switch[3]))
+        dev.append(DanfossAir(data, switch[0], switch[1], switch[2], switch[3]))
 
     add_entities(dev)
 

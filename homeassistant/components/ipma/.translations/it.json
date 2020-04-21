@@ -7,13 +7,13 @@
             "user": {
                 "data": {
                     "latitude": "Latitudine",
-                    "longitude": "Logitudine",
+                    "longitude": "Longitudine",
+                    "mode": "Modalit\u00e0",
                     "name": "Nome"
                 },
                 "description": "Instituto Portugu\u00eas do Mar e Atmosfera",
                 "title": "Localit\u00e0"
             }
-        },
-        "title": "Servizio meteo portoghese (IPMA)"
+        }
     }
 }

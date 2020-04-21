@@ -8,12 +8,11 @@
             "user": {
                 "data": {
                     "latitude": "Latitudine",
-                    "longitude": "Logitudine",
+                    "longitude": "Longitudine",
                     "name": "Nome"
                 },
                 "title": "Localit\u00e0 in Svezia"
             }
-        },
-        "title": "Servizio meteo svedese (SMHI)"
+        }
     }
 }

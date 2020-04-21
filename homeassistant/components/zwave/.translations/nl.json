@@ -16,7 +16,18 @@
                 "description": "Zie https://www.home-assistant.io/docs/z-wave/installation/ voor informatie over de configuratievariabelen",
                 "title": "Stel Z-Wave in"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Onbereikbaar",
+            "initializing": "Initialiseren",
+            "ready": "Gereed",
+            "sleeping": "Slaapt"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Onbereikbaar ({query_stage})",
+            "initializing": "Initialiseren ( {query_stage} )"
+        }
     }
 }

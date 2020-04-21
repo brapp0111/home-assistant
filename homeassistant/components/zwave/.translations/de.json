@@ -16,7 +16,18 @@
                 "description": "Informationen zu den Konfigurationsvariablen findest du unter https://www.home-assistant.io/docs/z-wave/installation/",
                 "title": "Z-Wave einrichten"
             }
+        }
+    },
+    "state": {
+        "_": {
+            "dead": "Nicht erreichbar",
+            "initializing": "Initialisierend",
+            "ready": "Bereit",
+            "sleeping": "Schlafend"
         },
-        "title": "Z-Wave"
+        "query_stage": {
+            "dead": "Nicht erreichbar ({query_stage})",
+            "initializing": "Initialisiere ({query_stage})"
+        }
     }
 }

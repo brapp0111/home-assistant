@@ -15,7 +15,7 @@
             "init": {
                 "data": {
                     "hapid": "ID del punto di accesso (SGTIN)",
-                    "name": "Nome (facoltativo, utilizzato come prefisso del nome per tutti i dispositivi)",
+                    "name": "Nome (opzionale, usato come prefisso del nome per tutti i dispositivi)",
                     "pin": "Codice Pin (opzionale)"
                 },
                 "title": "Scegli punto di accesso HomematicIP"
@@ -24,7 +24,6 @@
                 "description": "Premi il pulsante blu sull'access point ed il pulsante di invio per registrare HomematicIP con Home Assistant. \n\n ![Posizione del pulsante sul bridge](/static/images/config_flows/config_homematicip_cloud.png)",
                 "title": "Collegamento access point"
             }
-        },
-        "title": "HomematicIP Cloud"
+        }
     }
 }
